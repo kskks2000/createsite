@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  /* Base surfaces */
+  --color-background: #ffffff;
+  --color-surface: #faf9f7;
+  --color-surface-strong: #f2f0ed;
+
+  /* Text */
+  --color-foreground: #17140f;
+  --color-muted-foreground: #6b6459;
+
+  /* Charcoal/black brand ink — primary CTA & accents */
+  --color-ink: #18150f;
+  --color-ink-strong: #000000;
+  --color-on-ink: #ffffff;
+
+  /* Structure */
+  --color-border: #e6e2db;
+  --color-border-strong: #d3cdc0;
+
+  /* Semantic */
+  --color-destructive: #b3261e;
+
+  /* Spacing rhythm (marketing/landing density) */
+  --space-section: clamp(4.5rem, 8vw, 8rem);
+  --space-gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  /* Radius */
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-strong: var(--color-surface-strong);
+  --color-foreground: var(--color-foreground);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-ink: var(--color-ink);
+  --color-ink-strong: var(--color-ink-strong);
+  --color-on-ink: var(--color-on-ink);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-destructive: var(--color-destructive);
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, system-ui, sans-serif;
+
+  --radius-card: var(--radius-card);
+  --radius-pill: var(--radius-pill);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: "tnum" 1;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-on-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
